@@ -1,11 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My CI/CD Website</title>
-    <link rel="stylesheet" href="style.css">
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width,initial-scale=1" />
+ <title>To-Do App - Chapter 1</title>
+ <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Hello from CI/CD New Updated</h1>
-    <p>Deployed using AWS S3 + GitHub Actions</p>
+ <h1>To-Do App</h1>
+    <!-- add inside <body>, replacing "Content will go here" -->
+<div class="container">
+ <div class="task-form card">
+  <form id="taskForm">
+   <input type="text" id="taskDesc" placeholder="Task Description" required />
+   <input type="text" id="assignedTo" placeholder="Assigned To" required />
+   <input type="date" id="targetDate" required />
+   <button type="submit" id="addTaskBtn">Add Task</button>
+  </form>
+ </div>
+<div class="filters">
+ <input id="filterTask" placeholder="Search task..." />
+ <input id="filterAssigned" placeholder="Search assigned..." />
+ <select id="filterStatus">
+  <option value="">All Status</option>
+  <option value="Pending">Pending</option>
+  <option value="Complete">Complete</option>
+  <option value="Overdue">Overdue</option>
+ </select>
+ <button id="sortDateBtn">Sort by Date </button>
+</div>
+ <div class="task-list card">
+    <div class="table-wrapper">
+  
+  <table id="tasksTable">
+   <thead>
+    <tr>
+     <th>Task</th>
+     <th>Assigned To</th>
+     <th>Target Date</th>
+     <th>Status</th>
+     <th>Days Left</th>
+     <th>Actions</th>
+    </tr>
+   </thead>
+   <tbody id="taskTableBody"></tbody>
+  </table>
+ </div>
+</div>
+</div>
+ <!-- Content will go here in later chapters -->
+ <script src="script.js"></script>
 </body>
 </html>

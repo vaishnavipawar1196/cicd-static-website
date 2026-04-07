@@ -1,0 +1,50 @@
+/* style.css (chapter 1) */
+* { box-sizing: border-box; }
+body { font-family: system-ui, Arial, sans-serif; margin: 16px; background:#f6f6f8; color:#222; }
+h1 { text-align:center; margin-bottom: 20px; }
+/* form + table layout */
+.container { max-width: 1000px; margin: 0 auto; }
+.card { background: #fff; border-radius: 8px; padding: 14px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); margin-bottom: 18px; }
+.task-form form { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+.task-form input { padding:10px; border:1px solid #ddd; border-radius:6px; flex:1 1 180px; min-width:120px;}
+.task-form button { padding:10px 14px; border:none; border-radius:6px; background:#ff7e5f; color:#fff; cursor:pointer; }
+table { width:100%; border-collapse: collapse; }
+th, td { padding:10px; border-bottom:1px solid #eee; text-align:left; }
+.badge { padding:6px 8px; border-radius:6px; font-weight:600; display:inline-block; }
+.badge.pending { background: rgba(255,165,0,0.12); color: #d2691e; }
+.badge.complete { background: rgba(50,205,50,0.12); color: #228B22; }
+.badge.overdue { background: rgba(255,99,71,0.12); color: #b22222; }
+
+.row-overdue { background: rgba(255,240,240,0.6); }
+.btn-danger { background: transparent; border:1px solid #e33; color:#e33; padding:6px 8px; border-radius:6px; cursor:pointer; }
+.filters { display:flex; gap:8px; margin-bottom:8px; flex-wrap:wrap; }
+.filters input, .filters select, .filters button { padding:8px; border:1px solid #ddd; border-radius:6px; }
+
+/* header style */
+th { background: linear-gradient(90deg,#ffb085,#ff7e5f); color:#fff; font-weight:700; }
+tbody tr:hover { transform: translateY(-1px); background: #fffaf2; transition: all 120ms ease; }
+
+/* improved badges */
+.badge { font-size: 13px; padding:6px 10px; border-radius:999px; display:inline-block; }
+.badge.pending { background: #fff4e6; color: #ff8c42; border:1px solid rgba(255,140,66,0.12); }
+.badge.complete { background: #eefaf0; color: #2f9e44; border:1px solid rgba(47,158,68,0.08); }
+.badge.overdue { background: #fff1f0; color: #d43f3a; border:1px solid rgba(212,63,58,0.06); }
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
+}
+
+.table-wrapper table {
+  min-width: 700px; /* 👈 important (forces scroll) */
+}
+/* responsive */
+@media (max-width: 780px) {
+  .task-form form { flex-direction:column; }
+  .filters { flex-direction:column; }
+  thead { display:none; }
+  tr { margin-bottom:12px; border-radius:8px; background:#fff; padding:10px; }
+  td { display:flex; justify-content:space-between; padding:6px 10px; border-bottom:0; }
+  td::before { font-weight:600; width:45%; color:#555; }
+}
